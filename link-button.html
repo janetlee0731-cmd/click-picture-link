@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notion Image Link</title>
+  <title>GitHub Shortcut</title>
   <style>
-    /* 1. 清除預設邊距並隱藏捲軸，確保背景透明 */
     html, body {
       margin: 0;
       padding: 0;
@@ -13,37 +12,40 @@
       height: 100%;
       overflow: hidden;
       background: transparent;
+      /* 讓小圖示在區塊內水平置中、垂直置中；若要靠左對齊，請將 center 改為 flex-start */
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    /* 2. 讓超連結填滿整個視窗 */
+    /* 直接限制超連結與圖片的固定像素大小（可依喜好調整為 36px ~ 64px） */
     a {
       display: block;
-      width: 100%;
-      height: 100%;
+      width: 48px;
+      height: 48px;
       text-decoration: none;
+      border-radius: 50%; /* 圓形圖示可設為 50%，方形圖示建議改為 8px */
+      transition: transform 0.2s ease, opacity 0.2s ease;
     }
 
-    /* 3. 圖片自適應縮放，消除底部 4px 預設空隙並加上懸停回饋 */
+    a:hover {
+      opacity: 0.85;
+      transform: scale(1.06);
+    }
+
     img {
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* 若希望圖片完整顯示不被裁切，可改為 contain */
-      border-radius: 8px; /* 圓角幅度，不需要可設為 0 */
-      cursor: pointer;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-    }
-
-    img:hover {
-      opacity: 0.88;
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
 
-  <!-- 將 href 替換為目標網頁，src 替換為圖片路徑或網址 -->
-  <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-    <img src="./banner.png" alt="點擊前往網頁">
+  <!-- 已設定跳轉至 GitHub 首頁，請確認 src 為你 Repo 內的實際圖片檔名 -->
+  <a href="https://github.com/" target="_blank" rel="noopener noreferrer" title="前往 GitHub">
+    <img src="./github.png" alt="GitHub">
   </a>
 
 </body>
