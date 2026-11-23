@@ -15,7 +15,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      /* 控制兩張圖片之間的左右間距，可依需求微調 */
       gap: 24px;
     }
 
@@ -26,6 +25,7 @@
       text-decoration: none;
       border-radius: 12px;
       transition: transform 0.2s ease, opacity 0.2s ease;
+      flex-shrink: 0;
     }
 
     a:hover {
@@ -44,14 +44,19 @@
 </head>
 <body>
 
-  <!-- 左側圖片：GitHub -->
+  <!-- 第一張圖片：GitHub -->
   <a href="https://github.com/" target="_blank" rel="noopener noreferrer" title="前往 GitHub">
     <img src="./github.png" alt="GitHub">
   </a>
 
-  <!-- 右側圖片：F1 Live -->
+  <!-- 第二張圖片：F1 Live -->
   <a href="https://flive.cc.cd/" target="_blank" rel="noopener noreferrer" title="前往 F1 Live">
     <img src="./f1 live.png" alt="F1 Live">
+  </a>
+
+  <!-- 第三張圖片：AO3 -->
+  <a href="https://archiveofourown.org/" target="_blank" rel="noopener noreferrer" title="前往 AO3">
+    <img src="./ao3.png" alt="AO3">
   </a>
 
 </body>
